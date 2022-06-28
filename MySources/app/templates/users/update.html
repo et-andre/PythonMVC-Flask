@@ -1,0 +1,16 @@
+{% extends "layout/layout.html" %}
+{% block body %}
+<h1>
+    Update
+</h1>
+<form id="register" method="post">
+    {{ form.csrf_token }}
+    <input type="text" name="useremail"       placeholder="email"       value="{{ '' if user == None else user.useremail       }}" required>
+    <input type="text" name="userdescription" placeholder="description" value="{{ '' if user == None else user.userdescription }}" required>
+    {% if user.isAdmin() %}
+        <input type="checkbox" name="isAdmin" {% if user.isAdmin() %} checked {% endif %}>
+        <label for="isAdmin">Admin</label>
+    {% endif %}
+    <input type="submit" value="Send">
+</form>
+{% endblock %}
