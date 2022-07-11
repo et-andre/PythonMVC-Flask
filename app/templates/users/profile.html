@@ -1,7 +1,7 @@
 {% extends "layout/layout.html" %}
 {% block body %}
 {% if session.get('userid') %}
-    <a href="{{ url_for('userUpdate', userid = user.userid) }}">edit</a>
+{#    <a href="{{ url_for('userUpdate', userid = user.userid) }}">edit</a>#}
 {% endif %}
 <h1>
     {{ user.username }}
